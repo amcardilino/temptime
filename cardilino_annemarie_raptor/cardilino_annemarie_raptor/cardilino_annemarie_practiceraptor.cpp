@@ -23,6 +23,7 @@ int main()
 	cout << "Decrease time to " << con_time << endl;
 	cout << "OR" << endl;
 	cout << "Decrease temp to " << con_temp << endl;
+	cout << "Now it's time to actually learn how to turn on the oven" << endl; 
 
 
 	system("pause");
