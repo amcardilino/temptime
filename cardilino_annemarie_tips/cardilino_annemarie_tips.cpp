@@ -1,3 +1,6 @@
+//Assignment 4, to calculate tips
+//I'm still having trouble figuring out
+//when to use the modulus or division
 #include<iostream>
 #include<string>
 
@@ -11,6 +14,9 @@ int dollar = 100,
     nickel = dollar % 20,
     penny = dollar % 100,
     deposit = dollar + quarter + dime + nickel + penny;
+    //I tried making this section double and then just putting
+    //the money amount in like penny = .01, but
+    //it's not coming out quite right
 string name;
 
 cout << "Hello server. Enter name: " << endl;
