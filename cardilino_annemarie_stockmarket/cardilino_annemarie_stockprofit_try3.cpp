@@ -2,6 +2,7 @@
 #include<string>
 #include<cstdlib> //for random number generator
 #include<ctime>   //for system time
+#include<iomanip> //for if-else statements
 
 using namespace std;
 
@@ -47,15 +48,24 @@ cout << total_purchase << endl;
 cout << "\n\nLooking to sell your stock? \nHere is your current" ;
 cout <<" share info for " << stock_symbol << ":" << endl;
 
+//variables for selling stock
+int random_percent,
+    profit_loss,
+    flip;
+
+
 //equation to throw a random number
-const int MIN_VALUE = 1;  //minimuim percentage of change
-const int MAX_VALUE = 100 //maximum percentage of change
-unsigned seed = time(0);  //get system time
-srand(seed);              //seed a random number into generator
+unsigned seed = time (0);
+srand (seed);
+random_percent = (rand() % (100));
 
+profit_loss = random_percent;
 
+    flip = rand() % 2 + 1;
+    if (flip ==1) profit_loss = 1;
+    else profit_loss + -1;
 
-
+cout << "Your stock has fluctuated " << random_percent << "%";
 
     system("pause");
     return 0;
