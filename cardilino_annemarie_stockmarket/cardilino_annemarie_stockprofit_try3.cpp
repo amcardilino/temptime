@@ -63,9 +63,9 @@ profit_loss = random_percent;
 
     flip = rand() % 2 + 1;
     if (flip ==1) profit_loss = 1;
-    else profit_loss + -1;
+    else profit_loss = -1;
 
-cout << "Your stock has fluctuated " << random_percent << "%";
+cout << "Your stock has fluctuated " << profit_loss << "%";
 
     system("pause");
     return 0;
