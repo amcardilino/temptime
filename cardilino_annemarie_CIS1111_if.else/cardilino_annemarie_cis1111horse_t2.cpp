@@ -59,6 +59,7 @@ if (horse_select = 1)
         cout << "food it recieves. \nPlease enter ";
         cout << "the weight of the \nLight riding horse: ";
         cin >> weight;
+        light = horse_select;
     }
 else if (horse_select = 2)
     {
@@ -80,6 +81,9 @@ else if (horse_select = 3)
     }
 else
     cout << "Invalid option. Please select 1, 2 or 3.";
+//weight output
+cout << "You have entered that your horse " << endl;
+cout << "weighs " << weight << "lbs." endl;
 
 
 
