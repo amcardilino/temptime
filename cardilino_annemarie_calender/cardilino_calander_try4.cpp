@@ -1,3 +1,9 @@
+//Anne Marie Cardilino
+//Update 04.26.17
+//This is an update of the code I previously
+//submitted to display a calander of a
+//chosen year, month and starting day.
+
 #include<iostream>
 #include<iomanip>
 #include<string>
@@ -13,24 +19,23 @@ int main()
 	int year,
 		amount_days = 0,
 		day_array;
-	int days_month = 31; //workonthis
 	char select_another = 'A';
 
-	while (select_another == 'A' || select_another == 'a')
+if (select_another == 'A' || select_another == 'a')
 	{
 		cout << "\nEnter the year from 2016 - 2019 you would like to view: ";
 		cin >> year;
 		//validating that the year is correct
-		while (year < 2020 && year > 2015)
+		if (year < 2020 && year > 2015)
 		{
 			//entering the month
 			cout << "\nEnter the month you would like to see displayed: ";
 			cin >> month_select;
 			//feb leap year
-			if (month_select == "February" || month_select == "february" || month_select == "Feb" || month_select == "feb" && year == 2016)
+			if ((month_select == "February" || month_select == "february" || month_select == "Feb" || month_select == "feb") && year == 2016)
 				amount_days = 29;
 			//feb regular
-			if (month_select == "February" || month_select == "february" || month_select == "Feb" || month_select == "feb" && year != 2016)
+			if ((month_select == "February" || month_select == "february" || month_select == "Feb" || month_select == "feb") && year != 2016)
 				amount_days = 28;
 			//Jan, mar, may, jul, aug, oct, dec
 			if (month_select == "January" || month_select == "january" || month_select == "jan" || month_select == "Jan" || month_select == "March" || month_select == "march" || month_select == "mar" || month_select == "Mar" || month_select == "May" || month_select == "may" || month_select == "July" || month_select == "july" || month_select == "jul" || month_select == "Jul" || month_select == "August" || month_select == "august" || month_select == "aug" || month_select == "Aug" || month_select == "October" || month_select == "october" || month_select == "oct" || month_select == "Oct" || month_select == "December" || month_select == "december" || month_select == "dec" || month_select == "Dec")
@@ -56,16 +61,21 @@ int main()
 					day_array = 5;
 				if (day == "Saturday" || day == "saturday" || day == "sat" || day == "Sat")
 					day_array = 6;
-				int j = 1;
-				int i = 1;
+				int day_column = 0;	//day counter
+				int i = 0;	//row
 
-				for (i = day_array ; i <= DAYS_IN_WEEK; i++)
-				{
-					while (j <= days_month)
+
+					while (day_column < amount_days)
 					{
-						calander_display[i][DAYS_IN_WEEK] = { j++ };
-
-						cout << setw(7) << calander_display[i][DAYS_IN_WEEK] << "\t";
+						calander_display[i][day_array];
+						day_array++;
+						day_column++;
+						if(day_array > 6)
+						{
+							day_array = 0;
+							i++;
+						}
+						cout << calander_display[i][day_array] << endl;
 					}
 					cout << endl;		
 					year = 0;
@@ -78,7 +88,7 @@ int main()
 		cout << "To enter another month, select A & to quit, select B: ";
 		cin >> select_another;	
 
-		}					
+							
 		system("pause");
 			return 0;
 	}
